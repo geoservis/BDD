@@ -11,7 +11,7 @@ public class LoginPage {
     private static SelenideElement loginField;
     @FindBy(css = "[data-test-id=password] input")
     private static SelenideElement passwordFiele;
-    @FindBy(css = "data-test-id=action-login")
+    @FindBy(css = "[data-test-id=action-login]")
     private static SelenideElement loginButton;
 
     public VerificationPage validLogin(DataHelper.AuthInfo info) {
