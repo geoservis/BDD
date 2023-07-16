@@ -41,5 +41,4 @@ public class MoneyTransferNoPageObjectTest {
         assertEquals(expectedBalanceSecondCard, actualBalanceSecondCard);
     }
 
-
 }

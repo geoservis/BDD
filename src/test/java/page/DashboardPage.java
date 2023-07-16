@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.$$;
 public class DashboardPage {
     private final String balanceStart = "баланс: ";
     private final String balanceFinish = " р.";
-    private final SelenideElement heading = $("[data-test-id=dashboard");
+    private final SelenideElement heading = $("[data-test-id=dashboard]");
     private final ElementsCollection cards = $$(".list__item div");
 
     public DashboardPage() {
@@ -25,14 +25,14 @@ public class DashboardPage {
     }
 
     public TransferPage selectCardToTransfer(DataHelper.CardInfo cardInfo) {
-        cards.findBy((text(cardInfo.getCardNumber().substring(15)))).$("button").click();
+        cards.findBy(text(cardInfo.getCardNumber().substring(15))).$("button").click();
         return new TransferPage();
     }
-
+ 
     private int extractBalance(String text) {
-        val start = text.indexOf(balanceStart);
-        val finish = text.indexOf(balanceFinish);
-        val value = text.substring(start + balanceStart.length(), finish);
+        var start = text.indexOf(balanceStart);
+        var finish = text.indexOf(balanceFinish);
+        var value = text.substring(start + balanceStart.length(), finish);
         return Integer.parseInt(value);
     }
 }
